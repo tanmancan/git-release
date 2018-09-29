@@ -1,7 +1,7 @@
 <template>
   <div class="git-release-form">
     <h1>Github Release Form</h1>
-    <form action="">
+    <form>
       <FormFieldFactory
         v-for="(fieldData, key) in fields"
         :key="key"
@@ -27,17 +27,7 @@
     </form>
 
     <hr>
-<pre>
-<strong>Release Summary:</strong>
-
-<strong>endpoint:</strong> {{endpoint}}
-<strong>tag_name:</strong> {{this.fields.tag_name.val}}
-<strong>target_commitish:</strong> {{this.fields.target_commitish.val}}
-<strong>name:</strong> {{this.fields.name.val}}
-<strong>body:</strong> {{this.fields.body.val}}
-<strong>draft:</strong> {{this.fields.draft.val ? 'yes' : 'no'}}
-<strong>prerelease:</strong> {{this.fields.prerelease.val ? 'yes' : 'no'}}
-</pre>
+    <ReleaseSummary :endpoint="endpoint" :fields="fields"></ReleaseSummary>
   </div>
 </template>
 
@@ -45,10 +35,12 @@
 import fields from '../js/fields.json';
 import GitRelease from '../js/git-release';
 import FormFieldFactory from './FormFieldFactory.vue';
+import ReleaseSummary from './ReleaseSummary.vue';
 
 export default {
   components: {
     FormFieldFactory,
+    ReleaseSummary,
   },
   data() {
     return {
