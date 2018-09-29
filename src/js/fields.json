@@ -3,54 +3,63 @@
     "helpText": "Owner of the repository.",
     "defaultValue": "Octocat",
     "val": "",
-    "type": "text"
+    "type": "text",
+    "label": "Owner Name"
   },
   "repo": {
     "helpText": "Name of the repository",
     "defaultValue": "Hello-World",
     "val": "",
-    "type": "text"
+    "type": "text",
+    "label": "Repository Name"
   },
   "access_token": {
     "helpText": "Token you have generated that can be used to authorize access to the GitHub API. Keep this a secret because it can be used to gain unauthorized access to your repository and account. This app does not store the token, and only sends it to Github via an Authorization header.",
     "defaultValue": "0123456789abcdefghijklmnopqrstuvwxyz",
     "val": "",
-    "type": "text"
+    "type": "text",
+    "label": "Access Token"
   },
   "tag_name": {
     "helpText": "Required. The name of the tag.",
     "defaultValue": "v1.0.0",
     "val": "",
-    "type": "text"
+    "type": "text",
+    "label": "Tag Name"
   },
   "target_commitish": {
     "helpText": "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository\"s default branch (usually master).",
     "defaultValue": "master",
     "val": "",
-    "type": "text"
+    "type": "text",
+    "label": "Target Commit Hash"
   },
   "name": {
     "helpText": "The name of the release.",
     "defaultValue": "v1.0.0",
     "val": "",
-    "type": "text"
+    "type": "text",
+    "label": "Release Name"
   },
   "body": {
     "helpText": "Text describing the contents of the tag.",
     "defaultValue": "Description of the release",
     "val": "",
-    "type": "textarea"
+    "type": "textarea",
+    "label": "Release Message"
   },
   "draft": {
     "helpText": "Check to create a draft (unpublished) release, uncheck to create a published one. Default: uncheck",
     "defaultValue": false,
     "val": false,
-    "type": "checkbox"
+    "type": "checkbox",
+    "label": "Draft"
   },
   "prerelease": {
     "helpText": "Check to identify the release as a prerelease. uncheck to identify the release as a full release. Default: uncheck",
     "defaultValue": false,
     "val": false,
-    "type": "checkbox"
+    "type": "checkbox",
+    "label": "Pre-release"
   }
 }
