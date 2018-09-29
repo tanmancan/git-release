@@ -7,23 +7,8 @@
         :key="key"
         :field-name="key"
         :field-data="fieldData"></FormFieldFactory>
-
         <button type="submit" @click="submitForm">Submit</button>
-
-        <hr>
-
-        <p class="response-message">
-          <span v-if="response.html_url">
-            Your release has been created:
-            <a target="_blank" rel="noopener noreferrer" :href="response.html_url">View Release</a>
-            <br>
-          </span>
-          <span v-if="response.documentation_url">{{response.documentation_url}}<br></span>
-          <span v-if="response.message">{{response.message}}<br></span>
-          <span v-if="response.errors" v-for="(error, idx) in response.errors" :key="idx">
-            <span>{{error.field}} {{error.code}}<br></span>
-          </span>
-        </p>
+        <RequestResponse :response="response"></RequestResponse>
     </form>
 
     <hr>
@@ -36,11 +21,13 @@ import fields from '../js/fields.json';
 import GitRelease from '../js/git-release';
 import FormFieldFactory from './FormFieldFactory.vue';
 import ReleaseSummary from './ReleaseSummary.vue';
+import RequestResponse from './RequestResponse.vue';
 
 export default {
   components: {
     FormFieldFactory,
     ReleaseSummary,
+    RequestResponse,
   },
   data() {
     return {
