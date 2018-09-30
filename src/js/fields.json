@@ -56,7 +56,7 @@
     "label": "Target Commit Hash"
   },
   "body": {
-    "helpText": "Text describing the contents of the tag.",
+    "helpText": "Text describing the contents of the tag/release.",
     "defaultValue": "Description of the release",
     "val": "",
     "type": "textarea",
