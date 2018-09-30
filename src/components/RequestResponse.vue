@@ -1,15 +1,13 @@
 <template>
   <div>
-    <p class="response-message" v-if="response.message || response.errors">
+    <p class="response-message" v-if="response.message || response.errors || response.html_url">
       <span v-if="response.html_url">
         Your release has been created:
         <a target="_blank" rel="noopener noreferrer" :href="response.html_url">View Release</a>
         <br>
       </span>
-      <span v-if="response.documentation_url">{{response.documentation_url}}</span>
-      <br>
-      <span v-if="response.message">{{response.message}}</span>
-      <br>
+      <span v-if="response.documentation_url">{{response.documentation_url}}<br></span>
+      <span v-if="response.message">{{response.message}}<br></span>
       <span v-if="response.errors" v-for="(error, idx) in response.errors" :key="idx">
         <span>Error:{{error.code}}</span>
         <span v-if="error.field"> - field:{{error.field}}</span>
