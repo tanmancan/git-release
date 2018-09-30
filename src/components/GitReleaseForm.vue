@@ -53,8 +53,8 @@ export default {
 
     Object.keys(fields).forEach((key) => {
       if (process.env && process.env[`VUE_APP_${key.toUpperCase()}`]) {
-        this.fields.access_token.val = process.env[`VUE_APP_${key.toUpperCase()}`];
-        this.fields.access_token.readonly = true;
+        this.fields[key].val = process.env[`VUE_APP_${key.toUpperCase()}`];
+        this.fields[key].readonly = true;
       }
     });
   },
