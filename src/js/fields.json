@@ -17,7 +17,7 @@
     "helpText": "Token you have generated that can be used to authorize access to the GitHub API. Keep this a secret because it can be used to gain unauthorized access to your repository and account. This app does not store the token, and only sends it to Github via an Authorization header.",
     "defaultValue": "0123456789abcdefghijklmnopqrstuvwxyz",
     "val": "",
-    "type": "text",
+    "type": "password",
     "label": "Access Token"
   },
   "tag_name": {

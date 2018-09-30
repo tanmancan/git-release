@@ -4,7 +4,7 @@
     <input
       required
       :readonly="fieldData.readonly"
-      type="text"
+      :type="fieldData.type"
       :name="fieldName"
       :id="fieldName"
       v-model="fieldData.val"

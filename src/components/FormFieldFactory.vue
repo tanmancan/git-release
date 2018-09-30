@@ -29,7 +29,7 @@ export default {
   props: ['fieldData', 'fieldName'],
   computed: {
     isText() {
-      return this.fieldData.type === 'text';
+      return (this.fieldData.type === 'text' || this.fieldData.type === 'password');
     },
     isTextarea() {
       return this.fieldData.type === 'textarea';
@@ -50,6 +50,7 @@ export default {
   }
 
   input[type="text"],
+  input[type="password"],
   textarea {
     display: block;
     width: 100%;
