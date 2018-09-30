@@ -1,18 +1,8 @@
 <template>
-  <div class="form-field">
-    <FormFieldText
-      v-if="isText"
-      :field-data="fieldData"
-      :fieldName="fieldName"></FormFieldText>
-    <FormFieldTextarea
-      v-if="isTextarea"
-      :field-data="fieldData"
-      :field-name="fieldName"></FormFieldTextarea>
-    <FormFieldCheckbox
-      v-if="isCheckbox"
-      :field-data="fieldData"
-      :field-name="fieldName"></FormFieldCheckbox>
-  </div>
+  <component
+    :is="getFieldType"
+    :field-data="fieldData"
+    :fieldName="fieldName"></component>
 </template>
 
 <script>
@@ -27,19 +17,22 @@ export default {
     FormFieldCheckbox,
   },
   props: ['fieldData', 'fieldName'],
-  computed: {
-    isText() {
-      return (this.fieldData.type === 'text' || this.fieldData.type === 'password');
-    },
-    isTextarea() {
-      return this.fieldData.type === 'textarea';
-    },
-    isCheckbox() {
-      return this.fieldData.type === 'checkbox';
-    },
-  },
   data() {
-    return {};
+    return {
+      type: {
+        text: 'FormFieldText',
+        password: 'FormFieldText',
+        textarea: 'FormFieldTextarea',
+        checkbox: 'FormFieldCheckbox',
+      },
+    };
+  },
+  computed: {
+    getFieldType() {
+      return this.type[this.fieldData.type]
+        ? this.type[this.fieldData.type]
+        : 'FormFieldText';
+    },
   },
   mounted() {
     this.fieldData.defaultValue = `ex: ${this.fieldData.defaultValue}`;
