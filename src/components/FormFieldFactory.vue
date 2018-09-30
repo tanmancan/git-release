@@ -56,6 +56,10 @@ export default {
     padding: .25rem;
   }
 
+  [readonly="readonly"] {
+    opacity: 0.5;
+  }
+
   p {
     margin: 0 0 1rem;
   }
