@@ -28,11 +28,13 @@ export default class GitRelease {
     this.body = JSON.stringify(body);
   }
 
-  send() {
+  send(method = 'POST') {
     return fetch(this.endpoint, {
-      method: 'POST',
+      method,
       headers: this.headers,
-      body: this.body,
+      body: (method === 'POST')
+        ? this.body
+        : null,
     });
   }
 }
