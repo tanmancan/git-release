@@ -50,6 +50,13 @@ export default {
   },
   mounted() {
     this.doRelease = new GitRelease();
+
+    Object.keys(fields).forEach((key) => {
+      if (process.env && process.env[`VUE_APP_${key.toUpperCase()}`]) {
+        this.fields.access_token.val = process.env[`VUE_APP_${key.toUpperCase()}`];
+        this.fields.access_token.readonly = true;
+      }
+    });
   },
   methods: {
     submitForm(e) {
