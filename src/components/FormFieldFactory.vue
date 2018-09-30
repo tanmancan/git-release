@@ -41,6 +41,9 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    this.fieldData.defaultValue = `ex: ${this.fieldData.defaultValue}`;
+  },
 };
 </script>
 
