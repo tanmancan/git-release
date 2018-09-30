@@ -47,7 +47,10 @@ export default {
   },
   computed: {
     endpoint() {
-      return `https://api.github.com/repos/${this.fields.owner.val || this.fields.owner.defaultValue}/${this.fields.repo.val || this.fields.repo.defaultValue}/releases`;
+      const endpoint = 'https://api.github.com/repos/:owner/:repo/releases';
+      const updatedEndpoint = endpoint.replace(':owner', this.fields.owner.val || this.fields.owner.defaultValue)
+        .replace(':repo', this.fields.repo.val || this.fields.repo.defaultValue);
+      return updatedEndpoint;
     },
   },
   mounted() {
