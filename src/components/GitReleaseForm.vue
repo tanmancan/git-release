@@ -7,10 +7,10 @@
         :key="key"
         :field-name="key"
         :field-data="fieldData"></FormFieldFactory>
+        <GenerateReleaseMessage :fields="fields"></GenerateReleaseMessage>
         <button type="submit" @click="submitForm">Submit</button>
         <RequestResponse :response="response"></RequestResponse>
     </form>
-
     <hr>
     <ReleaseSummary :endpoint="endpoint" :fields="fields"></ReleaseSummary>
   </div>
@@ -22,12 +22,14 @@ import GitRelease from '../js/git-release';
 import FormFieldFactory from './FormFieldFactory.vue';
 import ReleaseSummary from './ReleaseSummary.vue';
 import RequestResponse from './RequestResponse.vue';
+import GenerateReleaseMessage from './GenerateReleaseMessage.vue';
 
 export default {
   components: {
     FormFieldFactory,
     ReleaseSummary,
     RequestResponse,
+    GenerateReleaseMessage,
   },
   data() {
     return {
@@ -72,9 +74,7 @@ export default {
       };
 
       this.doRelease.updateEndpoint(this.endpoint);
-      this.doRelease.addHeader('Content-Type', 'application/json');
-      this.doRelease.addHeader('Authorization', `token ${this.fields.access_token.val}`);
-      this.doRelease.addHeader('Accept', 'application/vnd.github.v3+json');
+      this.doRelease.addAccessToken(this.fields.access_token.val);
       this.doRelease.updateBody(payload);
 
       this.doRelease.send()
@@ -93,7 +93,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  * {
+    box-sizing: border-box;
+  }
+
   .git-release-form {
     max-width: 40rem;
     margin: auto;

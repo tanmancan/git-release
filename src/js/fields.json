@@ -20,33 +20,12 @@
     "type": "password",
     "label": "Access Token"
   },
-  "tag_name": {
-    "helpText": "Required. The name of the tag.",
-    "defaultValue": "v1.0.0",
-    "val": "",
-    "type": "text",
-    "label": "Tag Name"
-  },
-  "target_commitish": {
-    "helpText": "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository\"s default branch (usually master).",
-    "defaultValue": "master",
-    "val": "",
-    "type": "text",
-    "label": "Target Commit Hash"
-  },
   "name": {
     "helpText": "The name of the release.",
     "defaultValue": "v1.0.0",
     "val": "",
     "type": "text",
     "label": "Release Name"
-  },
-  "body": {
-    "helpText": "Text describing the contents of the tag.",
-    "defaultValue": "Description of the release",
-    "val": "",
-    "type": "textarea",
-    "label": "Release Message"
   },
   "draft": {
     "helpText": "Check to create a draft (unpublished) release, uncheck to create a published one. Default: uncheck",
@@ -61,5 +40,26 @@
     "val": false,
     "type": "checkbox",
     "label": "Pre-release"
+  },
+  "tag_name": {
+    "helpText": "The name of the tag.",
+    "defaultValue": "v1.0.0",
+    "val": "",
+    "type": "text",
+    "label": "Tag Name"
+  },
+  "target_commitish": {
+    "helpText": "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository\"s default branch (usually master).",
+    "defaultValue": "master",
+    "val": "",
+    "type": "text",
+    "label": "Target Commit Hash"
+  },
+  "body": {
+    "helpText": "Text describing the contents of the tag.",
+    "defaultValue": "Description of the release",
+    "val": "",
+    "type": "textarea",
+    "label": "Release Message"
   }
 }

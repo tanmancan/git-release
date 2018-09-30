@@ -3,12 +3,20 @@ export default class GitRelease {
     this.endpoint = endpoint;
     this.headers = new Headers();
     this.body = body;
+
+    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('Accept', 'application/vnd.github.v3+json');
   }
 
   addHeader(name = '', value = '') {
-    console.log(this.headers.get(name));
     if ((name || value) && !this.headers.get(name)) {
       this.headers.append(name, value);
+    }
+  }
+
+  addAccessToken(token = '') {
+    if (token && !this.headers.get('Authorization')) {
+      this.headers.append('Authorization', `token ${token}`);
     }
   }
 
