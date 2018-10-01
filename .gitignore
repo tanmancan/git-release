@@ -76,3 +76,5 @@ typings/
 *.njsproj
 *.sln
 *.sw*
+
+deploy.sh
