@@ -1,5 +1,7 @@
 # Git Release - Create releases with auto generated release message
 
+Online Demo: [https://git-release.tkarimdesign.com/](https://git-release.tkarimdesign.com/)
+
 ## Personal Access Token
 
 You will need a personal access token to authenticate with github. [How to generate token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
