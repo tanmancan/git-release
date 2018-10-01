@@ -17,15 +17,15 @@ npm run serve
 
 ### Pre-fill Form Data
 
-When you are running locally, uou can provide pre filled values for the form using a dotenv file. For, example, you can pre-fill the access_token inside a `.env.local` file, so you don't have to re-enter it every time.
-
-**IMPORTANT:** If you are going to build for production, make sure you remove any sensitive info from your dotenv file, such as the access token. Otherwise webpack will bundle it with your app.
+When you are running the app locally, you can provide pre filled values for the form using a dotenv file. For, example, you can pre-fill the `access_token` inside a `.env.development.local` file, so you don't have to re-enter it every time, you refresh the page.
 
 ```
 VUE_APP_ACCESS_TOKEN=012345abcdef
 ```
 
-The following variable names can be used to pre-fill the form data:
+**IMPORTANT:** If you are going to build for production, make sure you remove any sensitive info from your dotenv file, such as the access token. Otherwise webpack will bundle it with your app. For adding variables via for development, use a `.env.development.local` file. See more about how Vue handles environment variables here: https://cli.vuejs.org/guide/mode-and-env.html#modes
+
+### Available Variables
 
 |name|value|
 |-|-|
