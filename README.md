@@ -15,9 +15,11 @@ npm install
 npm run serve
 ```
 
-## Pre-fill Form Data
+### Pre-fill Form Data
 
-You can provide pre filled values for the form using a dotenv file. For, example, you can pre-fill the access_token, so you don't have to re-enter it every time.
+When you are running locally, uou can provide pre filled values for the form using a dotenv file. For, example, you can pre-fill the access_token inside a `.env.local` file, so you don't have to re-enter it every time.
+
+**IMPORTANT:** If you are going to build for production, make sure you remove any sensitive info from your dotenv file, such as the access token. Otherwise webpack will bundle it with your app.
 
 ```
 VUE_APP_ACCESS_TOKEN=012345abcdef
